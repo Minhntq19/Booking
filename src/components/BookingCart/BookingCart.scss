@@ -1,0 +1,79 @@
+@use '../../assets/styles/base';
+.bold {
+   font-weight: bold !important;
+}
+.inactive {
+   display: none;
+   border: none;
+}
+.roomDetail_booking {
+   display: block;
+   flex-direction: column;
+   width: 270px;
+   padding: 20px;
+   box-sizing: border-box;
+   position: absolute;
+   right: 0;
+   border: 1px solid #eee;
+   .ant-picker-input > input::placeholder {
+      color: #000;
+   }
+   .ant-picker-input > input {
+      font-size: 14px;
+   }
+   .roomDetail_price {
+      border: 1px solid #eee;
+      padding: 10px;
+      margin-bottom: 30px;
+      p {
+         font-size: 16px;
+         font-weight: 300;
+      }
+      h2 {
+         color: #777;
+         font-size: 30px;
+         font-weight: 400;
+         font-family: cursive;
+      }
+   }
+   .room_price {
+      display: flex;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-top: none;
+      table {
+         width: 100%;
+         th {
+            font-weight: 300;
+            font-family: cursive;
+            color: #333;
+         }
+         .leftBar {
+            text-align: left;
+         }
+         .rightBar {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            justify-content: center;
+         }
+         tr {
+            font-weight: 300;
+         }
+      }
+      width: 100%;
+   }
+   button {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      color: #fff;
+      background-color: base.$button-color;
+      border: none;
+      cursor: pointer;
+   }
+   button:active {
+      transform: translateY(1px);
+   }
+}

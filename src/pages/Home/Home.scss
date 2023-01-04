@@ -1,0 +1,24 @@
+.homepage {
+	background-color: #e5ebed;
+	.home_header {
+		height: 600px;
+		background: url(../../assets/imgs/Rio.jpg) no-repeat right;
+		background-size: cover;
+		opacity: 0.95;
+		color: #e5ebed;
+	}
+	.home_footer {
+		display: flex;
+		background-color: #e5ebed;
+		justify-content: center;
+		height: 350px;
+	}
+	.home_container {
+		position: relative;
+		z-index: 10;
+		margin-top: -70px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}

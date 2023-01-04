@@ -1,0 +1,91 @@
+.footer {
+	padding-top: 50px;
+	display: flex;
+	flex-direction: row;
+	width: 1000px;
+	justify-content: center;
+	h1 {
+		font-size: 18px;
+		padding-bottom: 25px;
+		font-weight: 350;
+	}
+	h1:after {
+		content: ' ';
+		display: block;
+		width: 15%;
+		height: 1.5px;
+		background: rgb(247, 177, 48);
+		margin-top: 35px;
+	}
+	.footer_contact {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		h2 {
+			font-size: 16px;
+			font-weight: 300;
+			padding: 20px 100px 20px 0;
+			color: #333;
+		}
+		p {
+			font-size: 16px;
+			font-weight: 300;
+			color: #333;
+		}
+	}
+	.footer_social {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		i {
+			a {
+				color: #777;
+			}
+			font-size: 25px;
+			display: flex;
+			padding-top: 20px;
+			gap: 20px;
+		}
+	}
+	.footer_subscribe {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		form {
+			display: flex;
+			flex-direction: column;
+			input {
+				margin-top: 20px;
+				padding: 3px 3px 3px 21px;
+				height: 36px;
+				font-size: 15px;
+				margin-bottom: 5px;
+				background-color: #e5ebed;
+				max-width: 100%;
+				border: 1px solid #777;
+				box-sizing: border-box;
+				text-overflow: ellipsis;
+			}
+			input:hover {
+				border-style: solid;
+				border-color: #777;
+				border-width: 3px;
+			}
+			button {
+				background-color: #777;
+				color: #fff;
+				padding: 8px;
+				font-size: 15px;
+				font-weight: 300;
+				border: none;
+				cursor: pointer;
+				transition: color background-color ease-in-out;
+			}
+			button:hover {
+				background-color: #fff;
+				color: #777;
+				transition-duration: 0.25s;
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+.hotel {
+   background: url(../../assets/imgs/Room.jpg) no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   background-position: left top;
+   .hotel_header {
+      height: 600px;
+   }
+   .hotel_container {
+      box-sizing: border-box;
+      width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      padding-bottom: 50px;
+      margin-top: -150px;
+      h1 {
+         color: #777;
+         font-size: 24px;
+         font-weight: 400;
+         margin: 20px 70px 0 70px;
+         padding-bottom: 10px;
+         border-bottom: 1px solid #ccc;
+      }
+   }
+   .hotel_container::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 860px;
+      background: #ccc;
+      align-self: center;
+   }
+   .hotel_footer {
+      background-color: #e5ebed;
+      display: flex;
+      justify-content: center;
+      height: 350px;
+   }
+}

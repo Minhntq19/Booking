@@ -1,0 +1,15 @@
+{
+   "extends": ["airbnb", "prettier"],
+   "plugins": ["prettier"],
+   "rules": {
+      "no-unused-vars": "warn",
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "react/prop-types": 0,
+      "jsx-a11y/click-events-have-key-events": "off",
+      "jsx-a11y/no-noninteractive-element-interactions": "off",
+      "arrow-body-style": ["off", "as-needed"]
+   },
+   "env": {
+      "browser": true
+   }
+}

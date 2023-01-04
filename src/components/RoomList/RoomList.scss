@@ -1,0 +1,79 @@
+.room {
+   display: flex;
+   flex-direction: row;
+   margin: 0 70px;
+   padding: 35px 0;
+   border-top: 1px solid #eee;
+   justify-content: space-between;
+   img {
+      width: 240px;
+      height: 170px;
+   }
+   .room_detail {
+      box-sizing: border-box;
+      margin: 0 20px;
+      width: 400px;
+      h2 {
+         color: #888;
+         padding-bottom: 10px;
+         font-size: 20px;
+      }
+      p {
+         font-size: 12px;
+      }
+      ul {
+         padding: 25px;
+         font-size: 12px;
+      }
+
+      .room_facilities {
+         height: 50px;
+         .tooltips {
+            position: relative;
+            display: flex;
+            gap: 8px;
+            font-size: 25px;
+            color: #777;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+         }
+      }
+   }
+   .room_price {
+      width: 160px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-sizing: border-box;
+
+      p {
+         text-align: center;
+         justify-content: flex-end;
+         margin: auto;
+         margin-bottom: 2px;
+         color: #777;
+      }
+      h2 {
+         text-align: center;
+         height: 100px;
+         color: #777;
+         font-size: 30px;
+         font-weight: 400;
+         font-family: cursive;
+      }
+      button {
+         width: 160px;
+         border: none;
+         background-color: #6aa3a2;
+         color: #fff;
+         height: 40px;
+         font-size: 18px;
+         font-weight: 300;
+         cursor: pointer;
+      }
+      button:active {
+         padding-top: 3px;
+      }
+   }
+}

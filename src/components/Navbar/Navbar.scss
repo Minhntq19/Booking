@@ -1,0 +1,44 @@
+.navbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	min-height: 35px;
+	align-items: center;
+	opacity: 1;
+	font-size: 16px;
+	text-decoration: none;
+	li {
+		list-style: none;
+		padding: 10px 50px;
+		margin: 25px 0;
+		cursor: pointer;
+		color: #fff;
+		font-weight: 400;
+		transition: 0s color;
+	}
+	li:hover {
+		color: #333;
+		transition-duration: 0.2s;
+	}
+	.navbar_button {
+		margin-left: 30px;
+		padding-left: 40px;
+		border-left: 1px solid #fff;
+		button {
+			padding: 5px 35px;
+			cursor: pointer;
+			background-color: #666;
+			border: none;
+			font-size: 16px;
+			color: #fff;
+			font-weight: 300;
+			border-radius: 2px;
+			transition: 0s color background-color;
+		}
+		button:hover {
+			background-color: #fff;
+			color: #333;
+			transition-duration: 0.2s;
+		}
+	}
+}

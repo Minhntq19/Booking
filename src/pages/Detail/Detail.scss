@@ -1,0 +1,53 @@
+@use '../../assets/styles/base';
+.roomDetail {
+   background: url(../../assets/imgs/Room.jpg) no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   background-position: left top;
+   .roomDetail_header {
+      height: 600px;
+   }
+   .roomDetail_container {
+      box-sizing: border-box;
+      width: 1000px;
+      margin: auto;
+      margin-top: -150px;
+      display: flex;
+      flex-direction: column;
+      background-color: base.$white-color;
+      padding: 30px 30px 15px 30px;
+      .roomDetail_title {
+         display: flex;
+         flex-direction: row;
+         font-size: 25px;
+         align-items: center;
+         padding-bottom: 20px;
+         span {
+            display: flex;
+            padding: 0 20px 0 0;
+            align-content: center;
+            border-right: 1px solid #ccc;
+            color: base.$button-color;
+            cursor: pointer;
+         }
+         h1 {
+            font-size: 28px;
+            color: base.$font-color;
+            padding-left: 20px;
+            font-weight: 400;
+         }
+      }
+      .roomDetail_content {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         position: relative;
+      }
+   }
+   .roomDetail_footer {
+      background-color: base.$primary-color;
+      display: flex;
+      justify-content: center;
+      height: 350px;
+   }
+}
