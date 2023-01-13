@@ -1,0 +1,45 @@
+@use '../../assets/styles/base.scss';
+.cartSummary {
+   background-color: #fafafa;
+   width: 30%;
+   padding: 30px;
+   box-sizing: border-box;
+   border-left: 1px solid #ccc;
+   .cartSummary_tittle {
+      padding-bottom: 10px;
+      font-size: 20px;
+      font-weight: 600;
+      border-bottom: 1px solid #ccc;
+   }
+   img {
+      width: 100%;
+      padding-top: 30px;
+   }
+   table {
+      width: 100%;
+      padding: 20px 0;
+      th {
+         font-size: 14px;
+      }
+   }
+   .leftBar {
+      text-align: left;
+      font-weight: 400;
+   }
+   .rightBar {
+      text-align: right;
+      font-weight: 700;
+   }
+   .cartSummary_detail {
+      border-bottom: 1px solid #ccc;
+   }
+   .cartSummary_subtotal {
+      border-bottom: 1px solid #ccc;
+   }
+   .cartSummary_total {
+      th {
+         font-size: 18px;
+         font-weight: 700;
+      }
+   }
+}

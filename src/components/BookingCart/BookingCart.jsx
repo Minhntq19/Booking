@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import { DatePicker, InputNumber, Spin } from 'antd';
+import { DatePicker, InputNumber } from 'antd';
 import dayjs from 'dayjs';
 import './BookingCart.scss';
+import { useNavigate } from 'react-router-dom';
 
 function BookingCart({ price }) {
    const { RangePicker } = DatePicker;
+   const [submitted, setSubmitted] = useState();
+   const [open, setOpen] = useState(false);
+   const [count, setCount] = useState('');
+   const [people, setPeople] = useState(1);
+   const [loading, setLoading] = useState(false);
+   const navigate = useNavigate();
    const disabledDate = (current) => {
       return current < dayjs();
    };
-   const [count, setCount] = useState('');
-   const [people, setPeople] = useState(0);
-   const [loading, setLoading] = useState(false);
    const handleChange = (e) => {
       if (e) {
          const date1 = dayjs(e[1]).format();
@@ -18,14 +22,20 @@ function BookingCart({ price }) {
          const diff = dayjs(date1).diff(date2, 'Day', true);
          setCount(diff);
          setLoading(true);
-         document.getElementsByClassName('room_price').classList.add('hide');
+         setSubmitted(true);
       } else {
          setLoading(false);
+         setSubmitted(false);
       }
    };
    const handlePeople = (e) => {
       setPeople(e);
-      console.log(e);
+   };
+   const handleSubmit = (e) => {
+      e.preventDefault();
+      if (submitted) {
+         navigate('/Hotel/booking/detail');
+      } else setOpen(true);
    };
    return (
       <div className='roomDetail_booking'>
@@ -35,6 +45,8 @@ function BookingCart({ price }) {
             <p>Per Night</p>
          </div>
          <RangePicker
+            open={open}
+            onOpenChange={() => setOpen(!open)}
             onChange={handleChange}
             style={{ borderRadius: '0', width: '100%', fontSize: '14px' }}
             size='large'
@@ -42,25 +54,22 @@ function BookingCart({ price }) {
             placeholder={['Check-In', 'Check-Out']}
          />
          <InputNumber
-            className='adults'
             style={{ borderRadius: '0', width: '100%', borderTop: 'none' }}
             prefix='Adults: '
-            min={0}
+            min={1}
             max={2}
-            onKeyDown={(e) => e.preventDefault()}
             defaultValue={1}
             size='large'
             onChange={handlePeople}
          />
          <InputNumber
-            className='children'
             style={{ borderRadius: '0', width: '100%', borderTop: 'none' }}
             prefix='Kids: '
             min={0}
-            max={2}
-            onKeyDown={(e) => e.preventDefault()}
+            max={2 - people}
             defaultValue={0}
             size='large'
+            onChange={handlePeople}
          />
          <div className={!loading ? 'inactive' : 'room_price'}>
             <table>
@@ -80,8 +89,9 @@ function BookingCart({ price }) {
                </tbody>
             </table>
          </div>
-
-         <button type='button'>Book Now</button>
+         <button type='submit' onClick={handleSubmit}>
+            Book Now
+         </button>
       </div>
    );
 }

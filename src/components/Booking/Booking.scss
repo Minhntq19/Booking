@@ -1,69 +1,63 @@
 .booking {
-	background-color: #fff;
-	width: 1000px;
-	align-self: center;
-	justify-content: center;
-	display: flex;
-	height: 100px;
-	.booking_form {
-		display: flex;
-		flex-direction: row;
-		align-self: center;
-		justify-content: center;
-		width: 100%;
-		p {
-			font-size: 12px;
-			padding-bottom: 2px;
-		}
-		input {
-			border: 1px solid #e5ebed;
-			padding-left: 10px;
-			text-transform: uppercase;
-			height: 30px;
-			font-size: 12px;
-			cursor: pointer;
-		}
-		input:focus {
-			border-radius: 0;
-			outline: none;
-		}
-		.booking_checkIn {
-			width: 250px;
-			input {
-				box-sizing: border-box;
-				width: 100%;
-			}
-		}
-		.booking_checkOut {
-			width: 250px;
-			input {
-				box-sizing: border-box;
-				width: 100%;
-			}
-		}
-		.booking_adultCounter {
-			width: 100px;
-			input {
-				box-sizing: border-box;
-				width: 100%;
-			}
-		}
-		.booking_kidCounter {
-			width: 100px;
-			input {
-				box-sizing: border-box;
-				width: 100%;
-			}
-		}
-		button {
-			height: 30px;
-			align-self: flex-end;
-			width: 160px;
-			background-color: rgba(106, 163, 162, 1);
-			box-sizing: border-box;
-			border: none;
-			color: #fff;
-			cursor: pointer;
-		}
-	}
+   background-color: #fff;
+   width: 1000px;
+   align-self: center;
+   justify-content: center;
+   display: flex;
+   height: 100px;
+   .booking_form {
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      justify-content: center;
+      width: 100%;
+      p {
+         font-size: 12px;
+         padding-bottom: 2px;
+      }
+      .ant-picker-input > input::placeholder {
+         color: #000;
+      }
+      .ant-picker-input > input {
+         font-size: 14px;
+      }
+      .booking_checkIn {
+         width: 250px;
+         input {
+            box-sizing: border-box;
+            width: 100%;
+         }
+      }
+      .booking_checkOut {
+         width: 250px;
+         input {
+            box-sizing: border-box;
+            width: 100%;
+         }
+      }
+      .booking_adultCounter {
+         width: 100px;
+         input {
+            box-sizing: border-box;
+            width: 100%;
+         }
+      }
+      .booking_kidCounter {
+         width: 100px;
+         input {
+            box-sizing: border-box;
+            width: 100%;
+         }
+      }
+      button {
+         height: 30px;
+         align-self: flex-end;
+         width: 160px;
+         background-color: rgba(106, 163, 162, 1);
+         box-sizing: border-box;
+         border: none;
+         color: #fff;
+         cursor: pointer;
+      }
+   }
 }

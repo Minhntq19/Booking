@@ -7,7 +7,39 @@ import Rio from './pages/Rio/Rio';
 import Contact from './pages/Contact/Contact';
 import Hotel from './pages/Hotel/Hotel';
 import Detail from './pages/Detail/Detail';
+import Navbar from './components/Navbar/Navbar';
+import SubTitle from './components/Title/SubTitle';
+import Footer from './components/Footer/Footer';
+import BookingDetail from './pages/BookingDetail/BookingDetail';
+import RioImage from './assets/imgs/Room.jpg';
 
+function Layout() {
+   const layoutStyle = {
+      background: `url(${RioImage}) no-repeat`,
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed',
+      backgroundPosition: 'left top',
+   };
+   return (
+      <div style={layoutStyle}>
+         <header style={{ height: '600px' }}>
+            <Navbar />
+            <SubTitle content='Our Apartment' />
+         </header>
+         <Outlet />
+         <footer
+            style={{
+               display: 'flex',
+               height: '350px',
+               backgroundColor: '#e5ebed',
+               justifyContent: 'center',
+            }}
+         >
+            <Footer />
+         </footer>
+      </div>
+   );
+}
 function App() {
    const router = createBrowserRouter([
       {
@@ -60,6 +92,16 @@ function App() {
                      price='350'
                   />
                ),
+            },
+         ],
+      },
+      {
+         path: '/Hotel/booking',
+         element: <Layout />,
+         children: [
+            {
+               path: '/Hotel/booking/detail',
+               element: <BookingDetail />,
             },
          ],
       },
