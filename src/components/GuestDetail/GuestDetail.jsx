@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import './GuestDetail.scss';
 import { Form, Input, Select, Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import countryList from 'react-select-country-list';
 
 function GuestDetail() {
    const InputStyle = {
@@ -9,13 +10,11 @@ function GuestDetail() {
       border: '1px solid #ccc',
       resize: 'none',
    };
-   const navigate = useNavigate;
-   const handleFinish = (e) => {
-      console.log(e);
-   };
-   const handleSubmit = (e) => {
-      e.preventDefault();
-      navigate('/hotel');
+   const [country, setCountry] = useState();
+   const options = useMemo(() => countryList().getData(), []);
+   const navigate = useNavigate();
+   const handleFinish = () => {
+      navigate('/hotel/pa');
    };
    return (
       <div className='guestDetail'>
@@ -79,14 +78,10 @@ function GuestDetail() {
             </Form.Item>
             <Form.Item label='Country' className='guestDetail_country'>
                <Select
-                  options={[
-                     {
-                        value: 'jack',
-                     },
-                     {
-                        value: 'lucy',
-                     },
-                  ]}
+                  options={options}
+                  onChange={(e) => {
+                     setCountry(e);
+                  }}
                />
             </Form.Item>
             <Form.Item label='Special Request' className=''>
@@ -101,7 +96,6 @@ function GuestDetail() {
                   shape='round'
                   style={{ backgroundColor: '#33a2dc', height: '40px', width: '45%', alignItems: 'flex-end' }}
                   htmlType='submit'
-                  onSubmit={handleSubmit}
                >
                   Continue to Checkout
                </Button>
